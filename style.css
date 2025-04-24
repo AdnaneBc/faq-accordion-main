@@ -92,18 +92,26 @@ body {
   cursor: pointer;
 }
 
-.answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  opacity: 0;
-  padding-top: 0;
+.card .answer {
+  display: none;
   color: var(--color-purple-600);
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
-.answer.open {
-  max-height: 300px; /* adjust based on content */
-  opacity: 1;
-  margin: 2rem 0;
+.minus-icon {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .card {
+    width: 88%;
+  }
+  .card p {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .answer p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
 }

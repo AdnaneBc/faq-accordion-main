@@ -5,12 +5,13 @@ questions.forEach((question, index) => {
     const answer = document.getElementById(`answer-${index + 1}`);
     const plusIcon = question.querySelector(".plus-icon");
     const minusIcon = question.querySelector(".minus-icon");
-    const isOpen = answer.classList.contains("open");
 
-    // Close all
+    const isOpen = answer.style.display === "block";
+
+    // Close all answers
     document
       .querySelectorAll(".answer")
-      .forEach((ans) => ans.classList.remove("open"));
+      .forEach((ans) => (ans.style.display = "none"));
     document
       .querySelectorAll(".plus-icon")
       .forEach((icon) => (icon.style.display = "inline"));
@@ -18,9 +19,9 @@ questions.forEach((question, index) => {
       .querySelectorAll(".minus-icon")
       .forEach((icon) => (icon.style.display = "none"));
 
-    // Toggle current
+    // Toggle current one
     if (!isOpen) {
-      answer.classList.add("open");
+      answer.style.display = "block";
       plusIcon.style.display = "none";
       minusIcon.style.display = "inline";
     }
